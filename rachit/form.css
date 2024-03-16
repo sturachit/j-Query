@@ -1,0 +1,40 @@
+body{
+    background: #000070;
+  }
+
+.form{
+    height: 800px;
+    /* background-color: antiquewhite; */
+    border-radius:20px ;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    display: inline-block;
+    border: none;
+    text-align: left;
+    box-shadow: 3px 2px rgba(121, 83, 210,.3 );
+    padding: 10px;
+    width: 350px;
+    margin: 10px 0;
+    background: transparent;
+    color: #FFF;
+  }
+.monkey{
+    display: block;
+    flex-direction: column;
+}
+
+
+.cricket{
+    /* border:1px solid red; */
+    flex-direction: column;
+
+  margin-top: 50px;
+    /* background-c olor: black; */
+    height: 40px;
+    width: 50px;
+}

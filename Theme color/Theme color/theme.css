@@ -1,0 +1,31 @@
+.main{
+    display: flex;
+    width: 50%;
+    margin: auto;
+}
+.box{
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+   margin: 15px;
+   cursor: pointer;
+}
+.bg-blue{
+    background-color: blue;
+}
+.bg-red{
+    background-color: red;
+}
+.bg-yellow{
+    background-color: yellow;
+}
+.bg-green{
+    background-color: green;
+}
+.bg-brown{
+    background-color:brown;
+}
+.bg{
+    background-color: rgb(221, 164, 90);
+}

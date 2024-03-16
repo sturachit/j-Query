@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  
+    <style>
+        .b-radious{
+            background-color: rgb(203, 130, 33);
+            border: 2px solid red;
+            border-radius: 2px;
+        }
+        
+        .txt{
+            background-color: aqua;
+            font-size: 20px;
+        }    
+        </style>
+        </head>
+<body>
+
+    <!-- que-1 -->
+   <button id="btn">click the button</button>
+
+    <!-- que-2 -->
+    <input type="text" name="btn1" id="btn1" placeholder="keypress"><br><br>
+    <input type="text" name="btn2" id="btn2" placeholder="keyup"><br><br>
+    <input type="text" name="btn3" id="btn3" placeholder="keydown"><br><br>
+
+    <!-- que-4 -->
+        
+       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam eos eius quis hic, a reprehenderit deserunt labore molestiae nam eveniet pariatur voluptate quos repudiandae, sed consequuntur tempore. Consectetur, aliquam ipsum.</p>
+      
+       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam eos eius quis hic, a reprehenderit deserunt labore molestiae nam eveniet pariatur voluptate quos repudiandae, sed consequuntur tempore. Consectetur, aliquam ipsum.</p>
+       
+       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam eos eius quis hic, a reprehenderit deserunt labore molestiae nam eveniet pariatur voluptate quos repudiandae, sed consequuntur tempore. Consectetur, aliquam ipsum.</p>
+       <input type="button" name="btn4" id="btn4" value="toggle"><br><br>
+
+      <!-- que-5 -->
+
+    <input type="button" name="btn5" id="btn5" value="hide"><br><br>
+    <input type="button" name="btn6" id="btn6" value="show"><br><br>
+    
+
+    
+
+    <script>
+        
+          // question-1
+
+        $('#btn').click(function(){
+            alert('welcome');
+        $('#btn').css('background-color','red');                 
+        });
+
+          // question-2
+ 
+
+          $('#btn1').click(function(){
+            $(this).css('background-color','yellow');
+          });
+       
+          $('#btn2').click(function(){
+            $(this).css('background-color','yellow');
+
+          });
+          
+          $('#btn3').click(function(){
+            $(this).css('background-color','yellow');
+
+          });
+
+        //   que-4
+
+        $('#btn4').click(function(){
+          $('#btn4').addClass('.b-radious');
+            $('p').toggle('.txt');
+          });
+
+          // que-5
+
+           
+        $('#btn5').click(function(){
+            $(this).css('background-color','red');
+            $('p').hide();
+          });
+
+          $('#btn6').dblclick(function(){
+            $(this).css('background-color','orange');
+            $('p').show();
+          });
+
+
+    </script>
+    
+
+</body>
+</html>

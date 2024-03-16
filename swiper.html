@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swiper</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js" ></script>
+      
+    <style>
+html, body {
+ margin: 0;
+ padding: 0;
+ display: block;
+ height: 100%;
+ width: 100%;
+ overflow: hidden;
+}
+
+.swiper-container {
+  width: calc(100vw - 70px);
+  max-width: 600px;
+  background-color: grey;
+  overflow: visible;
+  padding: 30px 0;
+}
+
+.swiper-wrapper {
+  list-style: none;
+  padding: 0;
+}
+
+.swiper-slide {
+  display: block;
+  width: auto;
+  padding: 8px;
+  margin-right: 8px;
+  background-color: purple;
+  opacity: 0.4;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+}
+
+[class*=swiper-button] {
+  background-color: white;
+  width: 27px;
+  height: 27px;
+  border: 3px solid white;
+  border-radius: 100%;
+}
+
+.swiper-button-prev {
+  left: -16px;
+}
+
+.swiper-button-next {
+  right: -16px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide swiper-slide-active">
+            <picture>
+              <!--[if IE 9]>
+                <video style="display: none;">
+              <![endif]-->
+              <source srcset="https://picsum.photos/id/1/460/340 , https://picsum.photos/id/1/920/680 2x"
+                      media="(min-width: 1200px)" />
+              <source srcset="https://picsum.photos/id/1/400/300, https://picsum.photos/id/1/800/600 2x"
+                      media="(min-width: 992px)" />
+              <source srcset="https://picsum.photos/id/1/200/200, https://picsum.photos/id/1/400/400 2x"
+                      media="(min-width: 768px)" />
+              <source srcset="https://picsum.photos/id/1/130/130, https://picsum.photos/id/1/260/260 2x"
+                      media="(min-width: 0px)" />
+              <!--[if IE 9]>
+                </video>
+              <![endif]-->
+              <img srcset="https://picsum.photos/id/1/130/130, https://picsum.photos/id/1/260/260 2x"
+                   src="https://picsum.photos/id/1/130/130"
+                   alt="Example" />
+            </picture>
+          </li>
+          <li class="swiper-slide">
+            <picture>
+              <!--[if IE 9]>
+                <video style="display: none;">
+              <![endif]-->
+              <source srcset="https://picsum.photos/id/2/460/340, https://picsum.photos/id/2/920/680 2x"
+                      media="(min-width: 1200px)" />
+              <source srcset="https://picsum.photos/id/2/400/300, https://picsum.photos/id/2/800/600 2x"
+                      media="(min-width: 992px)" />
+              <source srcset="https://picsum.photos/id/2/200/200, https://picsum.photos/id/2/400/400 2x"
+                      media="(min-width: 768px)" />
+              <source srcset="https://picsum.photos/id/2/130/130, https://picsum.photos/id/2/260/260 2x"
+                      media="(min-width: 0px)" />
+              <!--[if IE 9]>
+                </video>
+              <![endif]-->
+              <img srcset="https://picsum.photos/id/2/130/130, https://picsum.photos/id/2/260/260 2x"
+                   src="https://picsum.photos/id/2/130/130"
+                   alt="Example" />
+            </picture>
+          </li>
+          <li class="swiper-slide">
+            <picture>
+              <!--[if IE 9]>
+                <video style="display: none;">
+              <![endif]-->
+              <source srcset="https://picsum.photos/id/3/460/340, https://picsum.photos/id/3/920/680 2x"
+                      media="(min-width: 1200px)" />
+              <source srcset="https://picsum.photos/id/3/400/300, https://picsum.photos/id/3/800/600 2x"
+                      media="(min-width: 992px)" />
+              <source srcset="https://picsum.photos/id/3/200/200, https://picsum.photos/id/3/400/400 2x"
+                      media="(min-width: 768px)" />
+              <source srcset="https://picsum.photos/id/3/130/130, https://picsum.photos/id/3/260/260 2x"
+                      media="(min-width: 0px)" />
+              <!--[if IE 9]>
+                </video>
+              <![endif]-->
+              <img srcset="https://picsum.photos/id/3/130/130, https://picsum.photos/id/3/260/260 2x"
+                   src="https://picsum.photos/id/3/130/130"
+                   alt="Example" />
+            </picture>
+          </li>
+          <li class="swiper-slide">
+            <picture>
+              <!--[if IE 9]>
+                <video style="display: none;">
+              <![endif]-->
+              <source srcset="https://picsum.photos/id/4/460/340, https://picsum.photos/id/4/920/680 2x"
+                      media="(min-width: 1200px)" />
+              <source srcset="https://picsum.photos/id/4/400/300, https://picsum.photos/id/4/800/600 2x"
+                      media="(min-width: 992px)" />
+              <source srcset="https://picsum.photos/id/4/200/200, https://picsum.photos/id/4/400/400 2x"
+                      media="(min-width: 768px)" />
+              <source srcset="https://picsum.photos/id/4/130/130, https://picsum.photos/id/4/260/260 2x"
+                      media="(min-width: 0px)" />
+              <!--[if IE 9]>
+                </video>
+              <![endif]-->
+              <img srcset="https://picsum.photos/id/4/130/130, https://picsum.photos/id/4/260/260 2x"
+                   src="https://picsum.photos/id/4/130/130"
+                   alt="Example" />
+            </picture>
+          </li>
+          <li class="swiper-slide">
+            <picture>
+              <!--[if IE 9]>
+                <video style="display: none;">
+              <![endif]-->
+              <source srcset="https://picsum.photos/id/5/460/340, https://picsum.photos/id/4/920/680 2x"
+                      media="(min-width: 1200px)" />
+              <source srcset="https://picsum.photos/id/5/400/300, https://picsum.photos/id/4/800/600 2x"
+                      media="(min-width: 992px)" />
+              <source srcset="https://picsum.photos/id/5/200/200, https://picsum.photos/id/4/400/400 2x"
+                      media="(min-width: 768px)" />
+              <source srcset="https://picsum.photos/id/5/130/130, https://picsum.photos/id/4/260/260 2x"
+                      media="(min-width: 0px)" />
+              <!--[if IE 9]>
+                </video>
+              <![endif]-->
+              <img srcset="https://picsum.photos/id/5/130/130, https://picsum.photos/id/4/260/260 2x"
+                   src="https://picsum.photos/id/5/130/130"
+                   alt="Example" />
+            </picture>
+          </li>
+        </ul>
+        <div class="swiper-pagination">
+        </div>
+        <div class="swiper-button-prev">
+        </div>
+        <div class="swiper-button-next">
+        </div>
+      </div>
+      
+
+<script>
+    var swiper = new Swiper(
+  ".swiper-container",
+  {
+    //centeredSlides: "true",
+    slidesPerView: "auto",
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+   pagination: {
+    el: '.swiper-pagination',
+    type: 'fraction',
+   }
+  }
+);
+
+</script>
+
+
+</body>
+</html>

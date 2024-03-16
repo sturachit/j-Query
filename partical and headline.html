@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>partical</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+   
+   <style>
+  html {
+  overflow: hidden;
+  background: hsla(0, 0%, 0%, 1);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: radial-gradient(top, circle cover, hsla(330, 90%, 15%, 1) 20%, hsla(0, 0%, 0%, 1) 80%);
+cursor:move;
+}
+
+body,
+.space {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+#space {
+  left: 0;
+  top: 0;
+  zoom: 1
+}
+
+#space span {
+  position: absolute;
+}
+html,
+body {
+  height: 100%;  
+}
+body {
+  background: #0f0e17;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 60vw;
+  padding: 80px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  position: relative;
+  color: cadetblue; 
+
+
+}
+  .line {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    display: block;
+    background-color: #f25f4c;
+    bottom: calc(50% - 1px);
+    animation: line 2000ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: left;
+    transform: translateX(0) scaleX(0);
+    animation-iteration-count: infinite;
+  }
+
+  .char {
+    display: inline-block;
+    position: relative;
+    animation-duration: 2000ms;
+    animation-fill-mode: forwards;
+    animation-name: kern;
+    animation-delay: calc(var(--char-index) * 5ms);
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    opacity: 0;
+     animation-iteration-count: infinite;
+  }
+
+@keyframes line {
+  45% {
+    transform: translateX(0) scaleX(0);
+  }
+  70% {
+    transform: translateX(0) scaleX(0.8);
+  }
+  100% {
+    transform: translateX(100%) scaleX(0);
+  }
+}
+
+@keyframes kern {
+  0%,
+  70% {
+    transform: translateX(calc((var(--char-index)) * 40px));
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    animation-timing-function: none;
+  }
+}
+
+    </style>
+</head>
+<body>
+  <div id="space" class="space"></div>
+  <main>
+    <h1 data-splitting>Rachit Parmar...!<span class="line"></span></h1>
+  </main>
+
+
+
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  <script src="https://unpkg.com/gsap"></script>
+
+  <script>
+    var _3DPretty = function() {
+var obj = [],
+    _x = 0,
+    _y = 0,
+    _x1 = 0,
+    _y1 = 0,
+    parts = 500,
+    $, _tx, _ty, _w, _h;
+
+  var resize = function() {
+    _w = window.innerWidth * 0.5;
+    _h = window.innerHeight * 0.5;
+  }
+  var set = function(n, f) {
+    if (!!n) parts = n;
+    $ = document.getElementById('space');
+    window.addEventListener('mousemove', function(e) {
+      _x = e.clientX;
+      _y = e.clientY;
+    });
+    window.addEventListener('touchmove', function(e) {
+      e.preventDefault();
+      _x = e.touches[0].clientX;
+      _y = e.touches[0].clientY;
+    });
+    resize();
+    window.addEventListener('resize', resize);
+    _set(f);
+    run();
+  }
+  var run = function() {
+    window.requestAnimationFrame(run);
+    anime();
+  }
+  var _set = function(f) {
+    for (var i = 0; i < parts; i++) {
+      var o = {};
+      o.p = document.createElement('span');
+      $.appendChild(o.p);
+      var r = i / parts, j, a, b;
+      j = i % (parts * .5);
+      a = Math.floor(j) / 100 + (Math.floor(j / 2) % 10) / 5 * Math.PI * 2;
+      b = Math.acos(-0.9 + (j % 4) * 0.6);
+      r = !!f ? f(r) : r - r * r + .5;
+      var sbr = Math.sin(b) * r;
+      o.x = Math.sin(a) * sbr;
+      o.y = Math.cos(a) * sbr;
+      o.z = Math.cos(b) * r;
+      obj.push(o);
+      o.transform = function() {
+      var ax = .02 * _tx,
+          ay = .02 * _ty,
+          cx = Math.cos(ax),
+          sx = Math.sin(ax),
+          cy = Math.cos(ay),
+          sy = Math.sin(ay);
+
+      var z = this.y * sx + this.z * cx;
+          this.y = this.y * cx + this.z * -sx;
+          this.z = this.x * -sy + z * cy;
+          this.x = this.x * cy + z * sy;
+
+       var sc = 1 / (1 + this.z),
+            x = this.x * sc * _h + _w - sc * 2,
+            y = this.y * sc * _h + _h - sc * 2;
+
+        var p = this.p.style;
+        if (x >= 0 && y >= 0 && x < _w * 2 && y < _h * 2) {
+          var c = Math.round(256 + (-this.z * 256));
+          p.left = Math.round(x) + 'px';
+          p.top = Math.round(y) + 'px';
+          p.width = Math.round(sc * 2) + 'px';
+          p.height = Math.round(sc * 2) + 'px';
+          p.background = 'hsla(' + y + ',80%,80%,1)';
+          p.zIndex = 200 + Math.floor(-this.z * 100);
+        } else p.width = "0px";
+      }
+    }
+  }
+  var anime = function() {
+    var se = 1 / _h;
+    _tx = (_y - _x1) * se;
+    _ty = (_x - _y1) * se;
+    _x1 += _tx;
+    _y1 += _ty;
+    for (var i = 0, o; o = obj[i]; i++) o.transform();
+  }
+  return {
+    set: set
+  }
+}();
+window.onload = function() {
+  _3DPretty.set(500, function(r) {
+    return r * r;
+  });
+}
+
+Splitting();
+
+  </script>
+</body>
+</html>

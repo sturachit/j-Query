@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10/1/23</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+
+</head>
+<body>
+    
+    <button name="btn1" id  ="btn1">Click Me....!</button><br><br><hr>
+    <button name4="btn2" id  ="btn2">Double Click Me....!</button><br><br><hr>
+    <button name="b4n3" id  ="btn3">Mouse enter....!</button><br><br><hr>
+    <button name="btn4" id  ="btn4">Mouse Leave....!</button><br><br><hr>
+
+    <input type="text" name="usrname2" id="usrname2" placeholder="keydown"><br><br><br><hr>
+    <input type="text" name="usrname3" id="usrname3" placeholder="keyup"><br><br><br><hr>
+   
+
+    <input type="button" name="btn1" id="btn1" value="addClass"><br><br><br><hr>
+    <input type="button" name="btn2" id="btn2" value="removeClass"><br><br><br><hr>
+    <input type="button" name="btn3" id="btn3" value=""><br><br><br><hr>
+    <input type="button" name="btn4" id="btn4" value=""><br><br><br><hr>
+    <input type="button" name="btn5" id="btn5" value=""><br><br><br><hr>
+    <input type="button" name="btn6" id="btn6" value=""><br><br><br><hr>
+   
+     
+
+   <script>
+   
+
+      $("#usrname").keypress(function(){
+      $("#usrname").css("background-color","lavender");
+      });
+      
+      $("#usrname2").keydown(function(){
+      $("#usrname2").css("background-color","lavender");
+      });
+     
+      $("#usrname3").keyup(function(){
+      $("#usrname3").css("background-color","lavender");
+      });
+      
+      $("#btn1").click(function(){
+         $("#btn1").css("background-color","red");
+         $("#usrname,#usrname2,#usrname3").hide();
+      });
+      
+      $("#btn2").dblclick(function(){
+         $("#btn2").css("background-color","gray");
+         $("#usrname,#usrname2,#usrname3").show();
+      });
+      
+      $("#btn3").mouseenter(function(){
+         $("#btn3").css("background-color","orange");
+         $("#").css();
+      });
+      
+       $("#btn4").mouseleave(function(){
+         $("#btn4").css("background-color","tan");
+         $("#").css();
+      });
+
+       
+ 
+
+   </script>
+</body>
+</html>

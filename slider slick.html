@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12/01/23</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="/Fully-Responsive-Flexible-jQuery-Carousel-Plugin-slick/slick/slick.css">
+    <link rel="stylesheet" href="/Fully-Responsive-Flexible-jQuery-Carousel-Plugin-slick/slick/slick-theme.css">
+    <style>
+    
+  body{
+  background-color: #953035;
+}
+
+.r1{
+  width:100% ;
+  padding-top: 20px;
+  text-align:center;
+}
+
+h2{
+  font-family:sans-serif;
+  color:#fff;
+}
+.carousel{
+  width:90%;
+  margin:0px auto;
+
+}
+.slick-slide{
+  margin:10px;
+}
+.slick-slide img{
+  width:100%;
+  border: 2px solid gray;
+  border-radius: 20px;
+
+}
+.r1 .slick-dots li button:before {
+  font-size:10px;
+  color:cadetblue;
+}
+    </style>
+</head>
+<body>
+  <div class="r1">
+    <h2>Slick Carousel Example<h2>
+        <div class="carousel">
+          <div><img src="/images/1.jpg" height="340px"></div>
+          <div><img src="/images/2.jpg" height="340px"></div>
+          <div><img src="/images/3.jpg" height="340px"></div>
+          <div><img src="/images/4.png" height="340px"></div>
+          <div><img src="/images/5.jpg" height="340px"></div>
+          <div><img src="/images/6.jpg" height="340px"></div>
+          <div><img src="/images/7.jpg" height="340px"></div>
+          <div><img src="/images/8.jpg" height="340px"></div>
+
+
+
+        </div>
+  </div>
+
+  <script src="/Fully-Responsive-Flexible-jQuery-Carousel-Plugin-slick/slick/slick.min.js"></script>
+<script src="/Fully-Responsive-Flexible-jQuery-Carousel-Plugin-slick/slick/slick.js"></script>
+
+
+<script>
+  $(document).ready(function(){
+  $('.carousel').slick({
+  slidesToShow: 3,
+  dots:true,
+  centerMode: true,
+  });
+});
+
+// Slick version 1.5.8
+</script>
+
+
+
+</body>
+</html>
